@@ -1,3 +1,8 @@
+const saif = document.querySelector('.saif');
+const container = document.querySelector('.container');
+
+
+
 //---Count words------------
 
 function countWords(str) {
@@ -76,4 +81,13 @@ function countSentences(str) {
 }    
 
 // countSentences("i love you. my dear friend. i would love to eat you someday.");
+
+
+// now using the functions in the website---------------------------------
+
+setTimeout(function(){
+    saif.classList.add('invisible');
+    container.classList.remove('invisible');
+   }, 3000);
+
 
