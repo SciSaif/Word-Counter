@@ -13,13 +13,43 @@
         <img src="lg.rotating-balls-spinner.gif" >
     </div>
     <div class="saif invisible">
-        <!-- <p>Created By</p> -->
         <h1>
             <p>Created By</p>
             SAIF
         </h1>
     </div>
-    <div class="container invisible"></div>
+
+    <div class="container">
+        <textarea name="textarea" placeholder="Enter Text"></textarea>
+        <div class="button-box">
+            <button class="enter btns">Enter</button>
+            <button class="clear btns">Clear</button>
+        </div>
+        <div class="display">
+            <div class="display-result1">
+                <p>Number Of Words: <span class="num-of-words">0</span></p>
+                <p>Number Of Letters: <span class="num-of-letters">0</span></p>
+                <p>Number Of Sentences: <span class="num-of-sentences">0</span></p>
+                <p>Number Of Spaces: <span class="num-of-spaces">0</span></p>
+                <p>Number Of <input type="number" class="number" min="1" max="30"> letter words:
+                     <button class="find-num find">Find</button> 
+                     <span class="num-of-x-letter-words">0</span>
+                </p>
+                <p>Find if the text contains the word 
+                    <input type="text" class="word" placeholder="type word">:
+                    <button class="find-word find">Find</button>
+                    
+                </p>
+            </div>
+            
+            <div class="display-result2 invisible2">
+                  <p class="word-result">Word Found!
+                      there are 10 such word
+                  </p>
+                  
+            </div>
+        </div>
+    </div>
     
 
     <script src="wordCounter.js"></script>
