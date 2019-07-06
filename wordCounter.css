@@ -10,7 +10,59 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-family: sans-serif;
 }
+
+/* saif */
+.saif {
+    /* background: white; */
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: url('gif.gif');
+    /* background: url('../../img/n4.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.saif h1{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    font-size: 35vw;
+    font-family: 'Allerta Stencil', sans-serif;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    mix-blend-mode: screen;
+    text-shadow: 0 4px 10px rgb(255, 255, 255);
+    box-shadow: 0 5px 10px rgb(0, 0, 0);
+    background: rgb(4, 3, 78);
+
+}
+.saif h1 p {
+    font-size: 5vw;
+    color: white;
+    text-shadow: none;
+    font-family: 'Cinzel', serif;
+}
+
 
 .container {
     width: 90vw;
@@ -18,5 +70,16 @@ body{
     background: rgba(1, 54, 58, 0.884);
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(255, 255, 255);
-    
+
+}
+
+
+
+
+
+/* invisibility  */
+.invisible {
+    opacity: 0;
+    /* display: none; */
+    pointer-events: none;
 }
