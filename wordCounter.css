@@ -14,6 +14,20 @@ body{
     font-family: sans-serif;
 }
 
+/* loader */
+.loader{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+.loader img {
+    width: 60px;
+}
+
 /* saif */
 .saif {
     /* background: white; */

@@ -1,3 +1,4 @@
+const loader = document.querySelector('.loader');
 const saif = document.querySelector('.saif');
 const container = document.querySelector('.container');
 
@@ -86,8 +87,12 @@ function countSentences(str) {
 // now using the functions in the website---------------------------------
 
 setTimeout(function(){
-    saif.classList.add('invisible');
-    container.classList.remove('invisible');
+    loader.classList.add('invisible');
+    saif.classList.remove('invisible');
+    setTimeout(function(){
+        saif.classList.add('invisible');
+        container.classList.remove('invisible');
+       }, 3000);
    }, 3000);
 
 
