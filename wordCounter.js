@@ -59,11 +59,18 @@ function countLetters(str, which) {
 function countNumOfXLetterWords(str, x) {
     var num = 0;
     var text = str.trim().split(" ");
+    var numplus = Number(x) +1;
+    
     text.forEach(elem => {
-        if (elem.length == x) {
-            num++;
+        
+        if (elem.length == x || (elem.length == numplus && elem[elem.length - 1] == "." )) {
+            num++
+            console.log(num);
+            
+          
         }else return;
     });
+    
     return num;
 }
 
