@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="loader">
+    <div class="loader invisible">
         <img src="lg.rotating-balls-spinner.gif" >
     </div>
     <div class="saif invisible">
@@ -19,11 +19,13 @@
         </h1>
     </div>
 
-    <div class="container">
+    <div class="container ">
         <textarea name="textarea" placeholder="Enter Text"></textarea>
         <div class="button-box">
             <button class="enter btns">Enter</button>
             <button class="clear btns">Clear</button>
+            <button class="copy btns">Copy</button>
+            <button class="replace btns">Find/Replace</button>
         </div>
         <div class="display">
             <div class="display-result1">
@@ -35,18 +37,19 @@
                      <button class="find-num find">Find</button> 
                      <span class="num-of-x-letter-words">0</span>
                 </p>
-                <p>Find if the text contains the word 
-                    <input type="text" class="word" placeholder="type word">:
-                    <button class="find-word find">Find</button>
-                    
-                </p>
-            </div>
             
-            <div class="display-result2 invisible2">
-                  <p class="word-result">Word Found!
-                      there are 10 such word
-                  </p>
-                  
+            </div>
+            <div class="display-replace invisible2">
+
+                <input type="text" class="find-word-input replace-find-input" placeholder="Enter Word To Find">
+                <button class="find-word replace-find-btn">Find</button>
+                <input type="text" class="replace-word-input replace-find-input" placeholder="Replace by">
+                <button class="Replace-word replace-find-btn">Replace All</button>
+                <button class="back">Go Back</button>
+                
+            </div>
+            <div class="display-replace-answer invisible2">
+                <p class="replace-find-answer"></p>
             </div>
         </div>
     </div>

@@ -11,11 +11,18 @@ const numOfSpaces = document.querySelector('.num-of-spaces');
 const number = document.querySelector('.number');
 const findNumBtn = document.querySelector('.find-num');
 const numOfXLetterWords = document.querySelector('.num-of-x-letter-words');
-const wordInput = document.querySelector('.word');
-const findWordBtn = document.querySelector('.find-word');
 const displayResult1 = document.querySelector('.display-result1');
-const displayResult2 = document.querySelector('.display-result2');
-const wordResult = document.querySelector('.word-result');
+
+const copy = document.querySelector('.copy');
+const replace = document.querySelector('.replace');
+const displayReplace = document.querySelector('.display-replace');
+const displayReplaceAns = document.querySelector('.display-replace-answer');
+const findWordInput = document.querySelector('.find-word-input');
+const replaceWordInput = document.querySelector('.replace-word-input');
+const findWord = document.querySelector('.find-word');
+const replaceWord = document.querySelector('.Replace-word');
+const replaceFindAns = document.querySelector('.replace-find-answer');
+const back = document.querySelector('.back');
 
 
 
@@ -101,14 +108,14 @@ function countSentences(str) {
 
 // now using the functions in the website---------------------------------
 
-setTimeout(function(){
-    loader.classList.add('invisible');
-    saif.classList.remove('invisible');
-    setTimeout(function(){
-        saif.classList.add('invisible');
-        container.classList.remove('invisible');
-       }, 3000);
-   }, 3000);
+// setTimeout(function(){
+//     loader.classList.add('invisible');
+//     saif.classList.remove('invisible');
+//     setTimeout(function(){
+//         saif.classList.add('invisible');
+//         container.classList.remove('invisible');
+//        }, 3000);
+//    }, 3000);
 
 
 // when enter is clicked
@@ -129,21 +136,83 @@ findNumBtn.addEventListener('click', () => {
     numOfXLetterWords.innerHTML = ans;
 })
 
-findWordBtn.addEventListener('click', () => {
-    const textVal = textarea.value;
-    const word = wordInput.value;
-    const ans = doesItContain(textVal, word); 
-    displayResult1.classList.add('invisible2');
-    displayResult2.classList.remove('invisible2');
-    wordResult.innerHTML = ans;
-    setTimeout(function(){
-        displayResult1.classList.remove('invisible2');
-        displayResult2.classList.add('invisible2');
-    },3000)
-    
-
-})
+//when clear is clicked
 
 clear.addEventListener('click', () => {
     textarea.value = '';
+})
+
+//when copy is clicked
+
+copy.addEventListener('click', () =>{
+    textarea.select();
+    textarea.focus();
+    document.execCommand("copy");
+});
+
+//when replace is clicked
+
+function findReplace() {
+    displayResult1.classList.toggle('invisible2');
+    displayReplace.classList.toggle('invisible2');
+}
+
+replace.addEventListener('click', findReplace);
+
+function findword(str, word) {
+    var num = 0;
+    str.forEach(elem => {
+        if (elem.includes(word.toLowerCase())) {
+            num ++;
+        }else return;
+    });
+    if (num) {
+        return `${num} such words found!`;
+    }else {
+        return `No such word found!`;
+    }
+}
+
+findWord.addEventListener('click', () => {
+    displayReplace.classList.add('invisible2');
+    displayReplaceAns.classList.remove('invisible2');
+    var word = findWordInput.value, num= 0;
+    var textVal = textarea.value.trim().split(" ");
+    replaceFindAns.innerHTML = findword(textVal, word);
+    setTimeout(function(){
+        displayReplace.classList.remove('invisible2');
+        displayReplaceAns.classList.add('invisible2');
+    },3000)
+});
+
+function replaceword(str, wordToReplace, wordToReplaceBy) {
+    var newStr = "";
+    str.forEach(elem => {
+        if (elem.includes(wordToReplace)) {
+            newStr += wordToReplaceBy + " ";
+        }else {
+            newStr += elem + " ";
+        }
+    });
+    return newStr;
+}
+
+replaceWord.addEventListener('click', () => {
+    displayReplace.classList.add('invisible2');
+    displayReplaceAns.classList.remove('invisible2');
+    var wordToReplace = findWordInput.value;
+    var wordToReplaceBy = replaceWordInput.value;
+    var textVal = textarea.value.trim().split(" ");
+    textarea.value = replaceword(textVal, wordToReplace, wordToReplaceBy);
+    replaceFindAns.innerHTML = "All words Replaced";
+    setTimeout(function(){
+        displayReplace.classList.remove('invisible2');
+        displayReplaceAns.classList.add('invisible2');
+    },3000)
+});
+
+//when back is clicked 
+back.addEventListener('click', () => {
+    displayReplace.classList.add('invisible2');
+    displayResult1.classList.remove('invisible2');
 })
