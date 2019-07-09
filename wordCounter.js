@@ -108,14 +108,14 @@ function countSentences(str) {
 
 // now using the functions in the website---------------------------------
 
-// setTimeout(function(){
-//     loader.classList.add('invisible');
-//     saif.classList.remove('invisible');
-//     setTimeout(function(){
-//         saif.classList.add('invisible');
-//         container.classList.remove('invisible');
-//        }, 3000);
-//    }, 3000);
+setTimeout(function(){
+    loader.classList.add('invisible');
+    saif.classList.remove('invisible');
+    setTimeout(function(){
+        saif.classList.add('invisible');
+        container.classList.remove('invisible');
+       }, 3000);
+   }, 3000);
 
 
 // when enter is clicked
